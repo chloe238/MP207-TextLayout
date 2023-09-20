@@ -1,3 +1,10 @@
+/**
+ * A block whose rows are flipped
+ * 
+ * @author Chloe Kelly
+ * @version 1.3 of September 19 2023
+ */
+
 public class VerticallyFlipped implements TextBlock {
 
     TextBlock block;
@@ -24,12 +31,12 @@ public class VerticallyFlipped implements TextBlock {
      */
     public int height() {
         return this.block.height(); 
-    }
+    }//height()
 
     /**
      * Determine how many columns are in the block.
      */
     public int width() {
         return this.block.width();
-    }
-}
+    }//width()
+}//VerticallyFlipped(Textblock)

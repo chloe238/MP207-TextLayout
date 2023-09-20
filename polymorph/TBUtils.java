@@ -68,4 +68,33 @@ public class TBUtils {
     return lotsOfSpaces.substring(0, len);
   } // spaces(int)
 
+  /**
+   * Compares two TextBlocks to see if their contents are the same
+   */
+  public static boolean equal(TextBlock t1, TextBlock t2){
+    for (int i = 0; i < t1.height() || i < t2.height(); i++) {
+      try {
+        if(t1.row(i).compareTo(t2.row(i)) != 0){
+          return false;
+        }
+      } catch (Exception e) {
+        return false;
+      } // catch (Exception)
+    }
+    return true;
+  }//equal(TextBlock, TextBlock)
+
+  /**
+   * Compares two TextBlocks to see if they were built the same way
+   */
+  public static boolean eqv(TextBlock t1, TextBlock t2){
+    return (t1.getClass() == t2.getClass());
+  }//eqv(TextBlock, TextBlock)
+
+  /**
+   * Compares two TextBlocks to see if they share the same space in memory
+   */
+  public static boolean eq(TextBlock t1, TextBlock t2){
+    return (t1 == t2);
+  }//eqv(TextBlock, TextBlock)
 } // class TBUtils

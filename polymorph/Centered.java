@@ -1,17 +1,17 @@
 /**
- * A block truncated to a given width
+ * A block truncated and centered to a given width
  * 
  * @author Chloe Kelly
  * @version 1.3 of September 19 2023
  */
 
-public class Truncated implements TextBlock {
+public class Centered implements TextBlock {
     // FIELDS
     TextBlock block;
     int givenWidth;
 
     // CONSTRUCTOR
-    public Truncated(TextBlock block, int givenWidth) {
+    public Centered(TextBlock block, int givenWidth) {
         this.block = block;
         this.givenWidth = givenWidth;
     }
@@ -27,14 +27,15 @@ public class Truncated implements TextBlock {
         if ((i < 0) || (i >= this.block.height())) {
             throw new Exception("Invalid row " + i);
         } // if the row is invalid
-
-        int len = this.block.row(i).length();
+        
+        int len = this.block.row(i).trim().length();
         if (len >= this.givenWidth) {
             return this.block.row(i).substring(0, givenWidth);
         } //cut the string down to the specific width 
         else {
-            return this.block.row(i);
-        } //no change needed if the row is already less than the width
+            String pad = TBUtils.spaces((givenWidth - len)/2);//get side padding
+            return pad + this.block.row(i).trim() + pad;//add whitespace and delete any old space
+        } //add spaces to each side
     }// row(int)
 
     /**
@@ -48,10 +49,6 @@ public class Truncated implements TextBlock {
      * Determine how many columns are in the block.
      */
     public int width() {
-        if (this.block.width() < this.givenWidth) {
-            return this.block.width();
-        } else {
-            return this.givenWidth;
-        }
+        return this.givenWidth;
     }// width()
 }
