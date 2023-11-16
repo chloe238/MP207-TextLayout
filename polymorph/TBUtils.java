@@ -86,15 +86,16 @@ public class TBUtils {
 
   /**
    * Compares two TextBlocks to see if they were built the same way
+   * 
    */
   public static boolean eqv(TextBlock t1, TextBlock t2){
     return (t1.getClass() == t2.getClass());
   }//eqv(TextBlock, TextBlock)
-
+  
   /**
    * Compares two TextBlocks to see if they share the same space in memory
    */
   public static boolean eq(TextBlock t1, TextBlock t2){
     return (t1 == t2);
-  }//eqv(TextBlock, TextBlock)
+  }//eq(TextBlock, TextBlock)
 } // class TBUtils

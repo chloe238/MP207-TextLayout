@@ -51,4 +51,12 @@ public class Truncated implements TextBlock {
   public int width() {
     return this.givenWidth;
   }// width()
+
+  /**
+   * Get the underlying textblocks
+   */
+  public TextBlock[] getChildren(){
+    TextBlock[] arr = {this.block};
+    return arr;
+  }
 }

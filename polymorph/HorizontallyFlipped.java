@@ -47,4 +47,5 @@ public class HorizontallyFlipped implements TextBlock {
   public int width() {
     return this.block.width();
   }// width()
+
 }// HorizontallyFlipped(Textblock)

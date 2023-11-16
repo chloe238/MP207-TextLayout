@@ -40,4 +40,6 @@ public class VerticallyFlipped implements TextBlock {
   public int width() {
     return this.block.width();
   }// width()
+
+  
 }// VerticallyFlipped(Textblock)
